@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Meine Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f7f5f2;
             color: #333;
+            overflow-x: hidden; /* Verhindert seitliches Wackeln am Handy */
         }
 
         .page {
             display: none; 
             min-height: 100vh;
-            padding: 40px;
+            padding: 20px; /* Weniger Abstand am Rand für Mobile */
             box-sizing: border-box;
             flex-direction: column;
             justify-content: center;
@@ -27,13 +28,24 @@
             display: flex;
         }
 
-        h1 { margin-bottom: 20px; font-size: 1.8em; }
-        p { max-width: 600px; font-size: 1.1em; line-height: 1.6; }
+        h1 { 
+            margin-bottom: 20px; 
+            font-size: 1.6em; /* Skalierte Größe für Mobile */
+        }
+
+        p { 
+            max-width: 600px; 
+            font-size: 1.1em; 
+            line-height: 1.6; 
+            width: 100%; 
+        }
 
         .button-group {
             display: flex;
             gap: 10px;
             margin-top: 30px;
+            flex-wrap: wrap; /* Buttons knicken um, wenn es zu eng wird */
+            justify-content: center;
         }
 
         button {
@@ -45,6 +57,7 @@
             background-color: #333;
             color: white;
             transition: transform 0.2s;
+            min-width: 140px; /* Damit Buttons gut klickbar sind */
         }
 
         button:hover {
@@ -54,6 +67,23 @@
 
         .secondary-btn {
             background-color: #888;
+        }
+
+        /* BILDER OPTIMIERUNG */
+        img { 
+            max-width: 90%; /* Bild nimmt nie mehr als 90% der Breite ein */
+            height: auto;   /* Höhe passt sich automatisch an */
+            max-height: 40vh; /* Bild wird nie höher als 40% des Bildschirms */
+            margin: 20px 0;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+
+        /* ANPASSUNG FÜR DESKTOP (Größere Monitore) */
+        @media (min-width: 768px) {
+            h1 { font-size: 2.2em; }
+            .page { padding: 40px; }
+            img { max-height: 300px; }
         }
     </style>
 </head>
