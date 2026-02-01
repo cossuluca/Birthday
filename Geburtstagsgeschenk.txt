@@ -75,7 +75,7 @@
 
 <div class="page">
     <h1>Bekommst du vielleicht eine...?</h1>
-    <p>...goldene Klobürste?</p>
+    <img src="goldene Klobürste.jpeg" alt="...goldene Klobürste">
     <div class="button-group">
         <button onclick="goToWrongPage()">Oh ja bitte!</button>
         <button onclick="nextPage()" class="secondary-btn">Nein</button>
@@ -87,7 +87,8 @@
      ========================= -->
 
 <div class="page">
-    <h1>...oder vielleicht einen Katzenspitzer?</h1>
+    <h1>...oder vielleicht...</h1>
+    <img src="katzenspitzer_800x500.jpg" alt="...einen Katzenspitzer?">
     <p>Man weiß ja nie!</p>
     <div class="button-group">
         <button onclick="goToWrongPage()">Den will ich!</button>
